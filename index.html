@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Material de Revisão — Matemática 7º Ano | Curso Preparatório Professora Samanta</title>
+<style>
+:root{
+  --navy:#21384a; --blue:#2f6e8e; --orange:#f5871f; --cream:#f6f1e8;
+  --ink:#24323b; --muted:#66737b; --line:#d9e1e5; --card:#ffffff;
+  --green:#2c8065; --green-bg:#e9f6f0; --red:#b84a43; --red-bg:#faecea;
+  --gold:#e0a84a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f2f5f6;color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.58}
+a{color:inherit}
+.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:10px;top:10px;background:#fff;padding:10px;z-index:999}
+
+.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);box-shadow:0 8px 22px rgba(33,56,74,.06)}
+.header-inner{min-height:82px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo-link{display:flex;align-items:center;text-decoration:none;min-height:64px}
+.logo-img{display:block;height:61px;width:auto;max-width:290px;object-fit:contain}
+.logo-fallback{display:none;align-items:center;gap:10px}
+.fallback-mark{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;border:7px solid var(--orange);color:var(--orange);font-weight:900;font-size:34px}
+.fallback-text small{display:block;font-size:10px;letter-spacing:.19em;font-weight:800;color:#4e5960}
+.fallback-text strong{display:block;font-family:Georgia,serif;font-size:25px}
+.header-tag{text-align:right;color:#6e7a80;font-size:.75rem;text-transform:uppercase;letter-spacing:.11em}
+.header-tag strong{display:block;color:var(--navy);font-size:.93rem;letter-spacing:.04em}
+
+.hero{padding:55px 0 30px}
+.eyebrow,.tag{display:inline-block;padding:7px 11px;border-radius:8px;background:#fff0df;color:#a9520f;font-weight:800;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{font-family:Georgia,serif;font-size:clamp(2.25rem,5vw,4.3rem);line-height:1.02;margin:15px 0 15px;color:var(--navy)}
+.hero h1 em{color:var(--orange);font-style:normal}
+.hero-sub{max-width:850px;color:#52616a;font-size:1.08rem;margin:0 0 22px}
+.note{border-left:4px solid var(--orange);background:#fffaf3;padding:15px 17px;border-radius:0 12px 12px 0;color:#5f625f}
+
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:24px}
+.meta-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.meta-card strong{display:block;font-size:1.65rem;color:var(--orange)}
+.meta-card span{font-size:.84rem;color:var(--muted)}
+
+.section{padding:38px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px}
+.section-head h2{font-family:Georgia,serif;font-size:2rem;line-height:1.1;margin:6px 0 0;color:var(--navy)}
+.section-head p{margin:0;color:var(--muted);max-width:650px}
+.section-num{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:#7e8a91}
+
+.topic{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 10px 25px rgba(33,56,74,.04);margin:16px 0}
+.topic h3{margin:0 0 8px;font-family:Georgia,serif;color:var(--navy);font-size:1.45rem}
+.topic .definition{color:#52616a;margin-top:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mini{border:1px solid var(--line);border-radius:15px;padding:15px;background:linear-gradient(180deg,#fff,#fbfcfc)}
+.mini strong{color:var(--blue)}
+.mini p{margin:6px 0 0;font-size:.93rem}
+
+table{width:100%;border-collapse:collapse;margin:14px 0}
+th,td{border:1px solid var(--line);padding:10px 11px;text-align:left;vertical-align:top}
+th{background:#edf3f6;color:var(--navy);font-size:.85rem}
+td{font-size:.93rem}
+
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:center;margin-top:15px}
+.flow .box{background:#f5f8fa;border:1px solid #cbd7dd;border-radius:13px;padding:12px;text-align:center;font-weight:800;font-size:.88rem}
+.flow .arrow{font-size:1.4rem;text-align:center;color:var(--orange)}
+
+.visual{background:linear-gradient(135deg,#eef5f8,#fbf7ef);border-radius:18px;padding:16px;border:1px solid var(--line)}
+.visual svg{width:100%;height:auto;display:block}
+.caption{font-size:.77rem;color:var(--muted);margin-top:8px;text-align:center}
+
+.quiz-wrap{background:#eef4f6;border-top:1px solid #d8e2e6;border-bottom:1px solid #d8e2e6}
+.quiz-top{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:15px}
+.progress{flex:1;max-width:500px;background:#dce6ea;height:11px;border-radius:99px;overflow:hidden}
+.progress > div{height:100%;background:linear-gradient(90deg,var(--blue),var(--orange));width:0}
+.quiz-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:21px;margin:14px 0}
+.q-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.q-num{font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;color:#7c888e;font-weight:900}
+.q-topic{font-size:.76rem;background:#edf3f6;color:var(--blue);padding:5px 8px;border-radius:999px;font-weight:800;white-space:nowrap}
+.level{display:inline-block;padding:5px 8px;border-radius:999px;font-size:.72rem;font-weight:900;margin:8px 0 10px}
+.easy{background:#e8f5ef;color:#24795e}.medium{background:#fff1da;color:#a76010}.hard{background:#fae8e8;color:#a8423d}
+.question{font-size:1.02rem;margin:0 0 13px;font-weight:700}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.option{position:relative}
+.option input{position:absolute;opacity:0;pointer-events:none}
+.option label{display:block;border:1px solid #cfd8dd;border-radius:12px;padding:11px 12px;cursor:pointer;background:#fbfcfc;transition:.15s}
+.option input:checked + label{border-color:var(--orange);background:#fff3e6;box-shadow:0 0 0 2px rgba(245,135,31,.12)}
+.option label:hover{transform:translateY(-1px)}
+.result-line{margin-top:12px;font-weight:800}
+.correct{color:var(--green)}.wrong{color:var(--red)}
+.comment{margin-top:10px;padding:12px;border-radius:12px;background:#f6f8f9;border:1px dashed #cbd5da;display:none;font-size:.92rem}
+.quiz-card.answered .comment{display:block}
+.buttons{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.btn{border:0;border-radius:999px;padding:13px 18px;font-weight:900;cursor:pointer}
+.btn-main{background:var(--blue);color:#fff}.btn-reset{background:#fff;border:1px solid #cbd7dc;color:var(--navy)}
+
+.results{display:none}
+.results.show{display:block}
+.results-grid{display:grid;grid-template-columns:330px 1fr;gap:20px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}
+.donut-wrap{display:grid;place-items:center}
+.donut{width:220px;height:220px;border-radius:50%;background:conic-gradient(var(--blue) 0 0%, #dfe5e8 0 100%);position:relative}
+.donut:after{content:"";position:absolute;inset:42px;background:#fff;border-radius:50%}
+.donut-center{position:absolute;inset:0;display:grid;place-content:center;text-align:center;z-index:2}
+.donut-center strong{font-size:2.5rem;color:var(--navy)}
+.donut-center span{font-size:.82rem;color:var(--muted)}
+.legend{display:flex;gap:18px;justify-content:center;margin-top:12px;font-size:.85rem}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px}.dot1{background:var(--blue)}.dot2{background:#dfe5e8}
+
+.bar-row{display:grid;grid-template-columns:210px 1fr 55px;gap:10px;align-items:center;margin:12px 0}
+.bar-label{font-size:.84rem;font-weight:800}
+.bar-track{height:12px;background:#e5eaed;border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--orange));width:0}
+.bar-pct{text-align:right;font-size:.83rem;font-weight:900;color:var(--navy)}
+
+.insight{padding:15px;border-radius:14px;margin-top:10px}
+.insight.easy{background:var(--green-bg);color:#215f4e}
+.insight.hard{background:var(--red-bg);color:#853833}
+.study-list{display:grid;gap:10px;margin-top:14px}
+.study-item{padding:13px 14px;border-left:4px solid var(--orange);background:#fff8ef;border-radius:0 11px 11px 0}
+
+.writing{background:#243b4b;color:#fff;border-radius:22px;padding:25px}
+.writing h3{font-family:Georgia,serif;margin:8px 0;font-size:1.65rem}
+.writing p{color:#d8e1e6}
+.checklist{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}
+.check{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:10px;border-radius:11px}
+
+.contact{margin-top:30px;background:#172a38;color:#fff;border-radius:24px;padding:24px;position:relative;overflow:hidden}
+.contact:after{content:"";position:absolute;width:260px;height:260px;right:-90px;top:-110px;border:1px solid rgba(245,135,31,.55);border-radius:50%}
+.contact-content{display:flex;justify-content:space-between;align-items:center;gap:22px;position:relative;z-index:1}
+.contact small{display:block;color:#f6be7d;text-transform:uppercase;letter-spacing:.13em;font-size:.7rem;font-weight:900}
+.contact h3{font-family:Georgia,serif;margin:5px 0;font-size:1.5rem}.contact p{color:#d7e0e5;max-width:690px;margin:0}
+.contact-btn{display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#0b170f;text-decoration:none;padding:13px 17px;border-radius:999px;font-weight:900;white-space:nowrap}
+footer{text-align:center;color:#748087;padding:30px 0 55px;font-size:.8rem}
+footer strong{color:#394b56}
+.source-note{font-size:.78rem;color:#77838a;margin-top:14px}
+
+@media(max-width:900px){
+  .meta{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:1fr 1fr}.results-grid{grid-template-columns:1fr}.contact-content{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:620px){
+  .wrap{width:min(100% - 22px,1120px)}
+  .header-inner{flex-direction:column;align-items:flex-start;padding:10px 0}.header-tag{text-align:left}
+  .hero{padding-top:35px}.meta,.grid3,.options,.checklist,.flow{grid-template-columns:1fr}
+  .q-head{flex-direction:column}.quiz-top{align-items:flex-start;flex-direction:column}.progress{width:100%;max-width:none}
+  .bar-row{grid-template-columns:1fr}.bar-pct{text-align:left}
+  .contact-btn{width:100%;justify-content:center}
+}
+@media print{
+  .site{position:static;box-shadow:none}.quiz-card{break-inside:avoid}.results{display:block}
+  .buttons{display:none!important}.contact-btn{display:none}.donut{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site">
+  <div class="wrap header-inner">
+    <a class="logo-link" href="https://samanta-preparatorios.github.io/Aula-1-de-Ciencias/" target="_blank" rel="noopener" aria-label="Curso Preparatório Professora Samanta">
+      <img class="logo-img" src="https://samanta-preparatorios.github.io/Aula-1-de-Ciencias/Logo%20preparatorio1.jpeg"
+           alt="Logo Curso Preparatório Professora Samanta"
+           onload="this.style.display='block';this.nextElementSibling.style.display='none';"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <span class="logo-fallback">
+        <span class="fallback-mark">S</span>
+        <span class="fallback-text"><small>PROFESSORA</small><strong>Samanta</strong></span>
+      </span>
+    </a>
+    <div class="header-tag">Material de revisão<strong>Matemática · 7º ano</strong></div>
+  </div>
+</header>
+
+<main id="conteudo" class="wrap">
+<section class="hero">
+  <span class="eyebrow">📘 Revisão + diagnóstico de aprendizagem</span>
+  <h1>Matemática: <em>revisar, resolver e analisar</em></h1>
+  <p class="hero-sub">Material elaborado a partir da ficha de revisão anexada. O documento apresenta questões de equações, sistemas, ângulos, polígonos, razões e proporções ao longo de 4 páginas.</p>
+  <div class="note"><strong>Observação importante:</strong> o PDF anexado é uma ficha de <strong>Matemática do 7º ano A</strong>, datada de 28/09/2026, e não um conteúdo de Língua Portuguesa. Por fidelidade ao arquivo, este material trabalha os conteúdos efetivamente presentes nele.</div>
+  <div class="meta">
+    <div class="meta-card"><strong>9</strong><span>eixos de revisão</span></div>
+    <div class="meta-card"><strong>27</strong><span>questões diagnósticas</span></div>
+    <div class="meta-card"><strong>3</strong><span>níveis por eixo</span></div>
+    <div class="meta-card"><strong>1</strong><span>plano de estudo automático</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div><span class="section-num">Parte 1</span><h2>Revisão visual dos conteúdos</h2></div>
+    <p>Resumo dos conceitos que aparecem na ficha, com exemplos próximos dos modelos do PDF.</p>
+  </div>
+
+  <article class="topic">
+    <h3>1. Equações do 1º grau</h3>
+    <p class="definition">Uma equação do 1º grau possui uma incógnita, geralmente x, com expoente 1. Resolver significa encontrar o valor que torna a igualdade verdadeira.</p>
+    <div class="flow">
+      <div class="box">Identifique<br>os termos</div><div class="arrow">→</div>
+      <div class="box">Isole a<br>incógnita</div><div class="arrow">→</div>
+      <div class="box">Confira<br>substituindo</div>
+    </div>
+    <table><tr><th>Exemplo</th><th>Passo essencial</th><th>Resultado</th></tr>
+    <tr><td>6 + 2x = 82</td><td>2x = 76</td><td>x = 38</td></tr>
+    <tr><td>2(x + 5) = 30</td><td>2x + 10 = 30</td><td>x = 10</td></tr></table>
+    <div class="visual">
+      <svg viewBox="0 0 900 210" role="img" aria-label="Balança representando uma equação">
+        <line x1="450" y1="40" x2="450" y2="170" stroke="#2f6e8e" stroke-width="8"/>
+        <line x1="260" y1="80" x2="640" y2="80" stroke="#2f6e8e" stroke-width="8"/>
+        <line x1="300" y1="80" x2="240" y2="145" stroke="#2f6e8e" stroke-width="5"/>
+        <line x1="600" y1="80" x2="660" y2="145" stroke="#2f6e8e" stroke-width="5"/>
+        <rect x="185" y="145" width="110" height="34" rx="8" fill="#f5871f"/><text x="240" y="168" text-anchor="middle" fill="white" font-size="18" font-weight="700">2x</text>
+        <rect x="605" y="145" width="110" height="34" rx="8" fill="#e0a84a"/><text x="660" y="168" text-anchor="middle" fill="white" font-size="18" font-weight="700">76</text>
+        <text x="450" y="204" text-anchor="middle" fill="#52616a" font-size="17">A igualdade precisa permanecer equilibrada.</text>
+      </svg>
+    </div>
+  </article>
+
+  <article class="topic">
+    <h3>2. Sistemas de equações</h3>
+    <p class="definition">Um sistema reúne duas equações que devem ser verdadeiras ao mesmo tempo. A solução é o par (x, y) que satisfaz as duas.</p>
+    <div class="grid2">
+      <div class="mini"><strong>Substituição</strong><p>Despeje uma incógnita em uma equação e substitua na outra.</p></div>
+      <div class="mini"><strong>Adição/eliminação</strong><p>Some ou subtraia as equações para eliminar uma incógnita.</p></div>
+    </div>
+    <table><tr><th>Sistema</th><th>Ideia</th></tr>
+      <tr><td>x + y = 25<br>2x + 4y = 74</td><td>Multiplicar a primeira por −2 permite eliminar x.</td></tr>
+      <tr><td>2x + y = 31<br>x + y = 18</td><td>Subtraindo as equações, encontramos x.</td></tr>
+    </table>
+  </article>
+
+  <article class="topic">
+    <h3>3. Ângulos, retas e ângulos opostos pelo vértice</h3>
+    <p class="definition">Quando duas retas se cruzam, os ângulos opostos pelo vértice têm a mesma medida. Ângulos adjacentes sobre uma reta somam 180°.</p>
+    <div class="visual">
+      <svg viewBox="0 0 900 230" role="img" aria-label="Retas concorrentes com ângulos opostos">
+        <line x1="220" y1="190" x2="680" y2="40" stroke="#2f6e8e" stroke-width="7"/>
+        <line x1="220" y1="40" x2="680" y2="190" stroke="#f5871f" stroke-width="7"/>
+        <circle cx="450" cy="115" r="6" fill="#24323b"/>
+        <text x="450" y="64" text-anchor="middle" font-size="19" font-weight="800" fill="#21384a">opostos = iguais</text>
+        <text x="485" y="204" text-anchor="middle" font-size="17" fill="#52616a">adjacentes em uma linha reta → 180°</text>
+      </svg>
+    </div>
+  </article>
+
+  <article class="topic">
+    <h3>4. Complemento e suplemento</h3>
+    <div class="grid2">
+      <div class="mini"><strong>Complementares</strong><p>Somam 90°. Logo, o complemento de α é 90° − α.</p></div>
+      <div class="mini"><strong>Suplementares</strong><p>Somam 180°. Logo, o suplemento de α é 180° − α.</p></div>
+    </div>
+    <table><tr><th>Ângulo</th><th>Complemento</th><th>Suplemento</th></tr>
+      <tr><td>15°</td><td>75°</td><td>165°</td></tr>
+      <tr><td>38°</td><td>52°</td><td>142°</td></tr>
+      <tr><td>65°</td><td>25°</td><td>115°</td></tr>
+    </table>
+  </article>
+
+  <article class="topic">
+    <h3>5. Triângulos e quadriláteros</h3>
+    <div class="grid2">
+      <div class="mini"><strong>Triângulo</strong><p>Soma dos ângulos internos = <strong>180°</strong>.</p></div>
+      <div class="mini"><strong>Quadrilátero</strong><p>Soma dos ângulos internos = <strong>360°</strong>.</p></div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 900 240" role="img" aria-label="Triângulo e quadrilátero com somas de ângulos">
+        <polygon points="160,190 310,45 460,190" fill="none" stroke="#2f6e8e" stroke-width="6"/>
+        <text x="310" y="222" text-anchor="middle" font-size="19" font-weight="800" fill="#21384a">50° + 60° + x = 180°</text>
+        <polygon points="575,70 760,70 800,185 535,185" fill="none" stroke="#f5871f" stroke-width="6"/>
+        <text x="670" y="220" text-anchor="middle" font-size="19" font-weight="800" fill="#21384a">90° + 90° + 110° + x = 360°</text>
+      </svg>
+    </div>
+  </article>
+
+  <article class="topic">
+    <h3>6. Retas paralelas cortadas por uma transversal</h3>
+    <p class="definition">Nas figuras da ficha, uma transversal corta duas retas. Dependendo da posição, os ângulos podem ser correspondentes, alternos ou colaterais internos. Em muitos exercícios, a relação usada é igualdade ou soma de 180°.</p>
+    <div class="visual">
+      <svg viewBox="0 0 900 260" role="img" aria-label="Duas paralelas e uma transversal">
+        <line x1="130" y1="80" x2="770" y2="80" stroke="#2f6e8e" stroke-width="7"/>
+        <line x1="130" y1="185" x2="770" y2="185" stroke="#2f6e8e" stroke-width="7"/>
+        <line x1="270" y1="235" x2="590" y2="30" stroke="#f5871f" stroke-width="7"/>
+        <text x="710" y="68" font-size="18" fill="#21384a" font-weight="800">r</text>
+        <text x="710" y="174" font-size="18" fill="#21384a" font-weight="800">s</text>
+        <text x="610" y="58" font-size="17" fill="#a9520f" font-weight="800">correspondentes → iguais</text>
+        <text x="560" y="230" font-size="17" fill="#52616a">colaterais internos → 180°</text>
+      </svg>
+    </div>
+  </article>
+
+  <article class="topic">
+    <h3>7. Polígonos: soma dos ângulos internos e polígonos regulares</h3>
+    <div class="grid2">
+      <div class="mini"><strong>Soma dos internos</strong><p><strong>S = (n − 2) · 180°</strong>, em que n é o número de lados.</p></div>
+      <div class="mini"><strong>Regular</strong><p>Todos os lados e ângulos internos têm a mesma medida.</p></div>
+    </div>
+    <table><tr><th>Polígono</th><th>n</th><th>Soma interna</th><th>Ângulo interno regular</th></tr>
+      <tr><td>Pentágono</td><td>5</td><td>540°</td><td>108°</td></tr>
+      <tr><td>Hexágono</td><td>6</td><td>720°</td><td>120°</td></tr>
+      <tr><td>Decágono</td><td>10</td><td>1440°</td><td>144°</td></tr>
+    </table>
+    <div class="mini"><strong>Ângulo externo de um regular</strong><p><strong>E = 360°/n</strong>. No decágono regular: 360° ÷ 10 = 36°.</p></div>
+  </article>
+
+  <article class="topic">
+    <h3>8. Razões</h3>
+    <p class="definition">Razão compara duas grandezas por meio de uma divisão. A ordem importa: 3:2 é diferente de 2:3.</p>
+    <div class="visual">
+      <svg viewBox="0 0 900 190" role="img" aria-label="Representação visual de uma razão 3 para 2">
+        <g fill="#2f6e8e">
+          <circle cx="170" cy="80" r="22"/><circle cx="225" cy="80" r="22"/><circle cx="280" cy="80" r="22"/>
+        </g>
+        <g fill="#f5871f"><circle cx="410" cy="80" r="22"/><circle cx="465" cy="80" r="22"/></g>
+        <text x="315" y="88" text-anchor="middle" font-size="27" font-weight="900" fill="#21384a">:</text>
+        <text x="315" y="140" text-anchor="middle" font-size="18" fill="#52616a">3 : 2</text>
+      </svg>
+    </div>
+    <p><strong>Propriedade útil:</strong> multiplicar ou dividir os dois termos pelo mesmo número mantém a mesma razão.</p>
+  </article>
+
+  <article class="topic">
+    <h3>9. Proporções</h3>
+    <p class="definition">Uma proporção é uma igualdade entre duas razões. Em uma proporção a/b = c/d, fazemos a · d = b · c, quando os denominadores são diferentes de zero.</p>
+    <div class="flow">
+      <div class="box">Monte as<br>duas razões</div><div class="arrow">→</div>
+      <div class="box">Faça a<br>multiplicação cruzada</div><div class="arrow">→</div>
+      <div class="box">Resolva<br>a equação</div>
+    </div>
+    <table><tr><th>Exemplo</th><th>Produto cruzado</th><th>Resultado</th></tr>
+      <tr><td>3/5 = x/20</td><td>5x = 60</td><td>x = 12</td></tr>
+      <tr><td>8/(2x) = 12/(x+4)</td><td>8(x+4) = 24x</td><td>x = 2</td></tr>
+    </table>
+  </article>
+</section>
+
+<section class="section quiz-wrap" id="questionario">
+  <div class="quiz-top">
+    <div>
+      <span class="section-num">Parte 2</span>
+      <h2 style="font-family:Georgia,serif;margin:7px 0 0;color:var(--navy)">Questionário diagnóstico</h2>
+    </div>
+    <div style="min-width:300px">
+      <div id="answeredLabel" style="font-size:.83rem;font-weight:900;margin-bottom:6px">0 de 27 questões respondidas</div>
+      <div class="progress"><div id="progressBar"></div></div>
+    </div>
+  </div>
+
+<form id="quizForm">
+
+<!-- 1 Equações -->
+<article class="quiz-card" data-topic="Equações do 1º grau" data-answer="B" data-level="Fácil">
+  <div class="q-head"><div class="q-num">Questão 1</div><div class="q-topic">Equações</div></div>
+  <span class="level easy">Fácil</span>
+  <p class="question">Resolva: 3x + 5 = 20.</p>
+  <div class="options">
+    <div class="option"><input id="q1a" name="q1" value="A" type="radio"><label for="q1a">A) x = 3</label></div>
+    <div class="option"><input id="q1b" name="q1" value="B" type="radio"><label for="q1b">B) x = 5</label></div>
+    <div class="option"><input id="q1c" name="q1" value="C" type="radio"><label for="q1c">C) x = 7</label></div>
+    <div class="option"><input id="q1d" name="q1" value="D" type="radio"><label for="q1d">D) x = 10</label></div>
+  </div>
+  <div class="comment">Comentário: 3x + 5 = 20 → 3x = 15 → x = 5. A alternativa correta é B.</div>
+</article>
+
+<article class="quiz-card" data-topic="Equações do 1º grau" data-answer="C" data-level="Médio">
+  <div class="q-head"><div class="q-num">Questão 2</div><div class="q-topic">Equações</div></div>
+  <span class="level medium">Médio</span>
+  <p class="question">Qual é a solução de 5x − 7 = 2x + 14?</p>
+  <div class="options">
+    <div class="option"><input id="q2a" name="q2" value="A" type="radio"><label for="q2a">A) x = 5</label></div>
+    <div class="option"><input id="q2b" name="q2" value="B" type="radio"><label for="q2b">B) x = 6</label></div>
+    <div class="option"><input id="q2c" name="q2" value="C" type="radio"><label for="q2c">C) x = 7</label></div>
+    <div class="option"><input id="q2d" name="q2" value="D" type="radio"><label for="q2d">D) x = 8</label></div>
+  </div>
+  <div class="comment">Comentário: 5x − 2x = 14 + 7 → 3x = 21 → x = 7. A correta é C.</div>
+</article>
+
+<article class="quiz-card" data-topic="Equações do 1º grau" data-answer="A" data-level="Difícil">
+  <div class="q-head"><div class="q-num">Questão 3</div><div class="q-topic">Equações</div></div>
+  <span class="level hard">Difícil</span>
+  <p class="question">Um retângulo tem perímetro 100 cm. O lado maior mede x + 10 e o menor mede x. Qual é a medida do lado menor?</p>
+  <div class="options">
+    <div class="option"><input id="q3a" name="q3" value="A" type="radio"><label for="q3a">A) 20 cm</label></div>
+    <div class="option"><input id="q3b" name="q3" value="B" type="radio"><label for="q3b">B) 22 cm</label></div>
+    <div class="option"><input id="q3c" name="q3" value="C" type="radio"><label for="q3c">C) 25 cm</label></div>
+    <div class="option"><input id="q3d" name="q3" value="D" type="radio"><label for="q3d">D) 30 cm</label></div>
+  </div>
+  <div class="comment">Comentário: 2x + 2(x + 10) = 100 → 4x + 20 = 100 → 4x = 80 → x = 20 cm. Portanto, A.</div>
+</article>
+
+<!-- 2 Sistemas -->
+<article class="quiz-card" data-topic="Sistemas de equações" data-answer="D" data-level="Fácil">
+  <div class="q-head"><div class="q-num">Questão 4</div><div class="q-topic">Sistemas</div></div>
+  <span class="level easy">Fácil</span>
+  <p class="question">Resolva o sistema: x + y = 25 e 2x + 4y = 74. Qual é o valor de y?</p>
+  <div class="options">
+    <div class="option"><input id="q4a" name="q4" value="A" type="radio"><label for="q4a">A) 10</label></div>
+    <div class="option"><input id="q4b" name="q4" value="B" type="radio"><label for="q4b">B) 11</label></div>
+    <div class="option"><input id="q4c" name="q4" value="C" type="radio"><label for="q4c">C) 13</label></div>
+    <div class="option"><input id="q4d" name="q4" value="D" type="radio"><label for="q4d">D) 12</label></div>
+  </div>
+  <div class="comment">Comentário: multiplicando x + y = 25 por −2: −2x − 2y = −50. Somando à segunda: 2y = 24, então y = 12. Alternativa D.</div>
+</article>
+
+<article class="quiz-card" data-topic="Sistemas de equações" data-answer="B" data-level="Médio">
+  <div class="q-head"><div class="q-num">Questão 5</div><div class="q-topic">Sistemas</div></div>
+  <span class="level medium">Médio</span>
+  <p class="question">No sistema 2x + y = 31 e x + y = 18, qual é o valor de x?</p>
+  <div class="options">
+    <div class="option"><input id="q5a" name="q5" value="A" type="radio"><label for="q5a">A) 11</label></div>
+    <div class="option"><input id="q5b" name="q5" value="B" type="radio"><label for="q5b">B) 13</label></div>
+    <div class="option"><input id="q5c" name="q5" value="C" type="radio"><label for="q5c">C) 15</label></div>
+    <div class="option"><input id="q5d" name="q5" value="D" type="radio"><label for="q5d">D) 18</label></div>
+  </div>
+  <div class="comment">Comentário: subtraindo a segunda equação da primeira: x = 31 − 18 = 13. Alternativa B.</div>
+</article>
+
+<article class="quiz-card" data-topic="Sistemas de equações" data-answer="B" data-level="Difícil">
+  <div class="q-head"><div class="q-num">Questão 6</div><div class="q-topic">Sistemas</div></div>
+  <span class="level hard">Difícil</span>
+  <p class="question">Em uma lanchonete, foram vendidos 25 produtos entre hambúrgueres e sucos. Cada hambúrguer custa R$ 12 e cada suco custa R$ 5. A arrecadação foi de R$ 265. Quantos hambúrgueres foram vendidos?</p>
+  <div class="options">
+    <div class="option"><input id="q6a" name="q6" value="A" type="radio"><label for="q6a">A) 18</label></div>
+    <div class="option"><input id="q6b" name="q6" value="B" type="radio"><label for="q6b">B) 20</label></div>
+    <div class="option"><input id="q6c" name="q6" value="C" type="radio"><label for="q6c">C) 22</label></div>
+    <div class="option"><input id="q6d" name="q6" value="D" type="radio"><label for="q6d">D) 23</label></div>
+  </div>
+  <div class="comment">Comentário: seja h o número de hambúrgueres e s o de sucos. Temos h + s = 25 e 12h + 5s = 265. Como s = 25 − h, então 12h + 5(25 − h) = 265 → 7h = 140 → h = 20. Alternativa B.</div>
+</article>
+
+<!-- 3 Angulos -->
+<article class="quiz-card" data-topic="Ângulos e retas" data-answer="C" data-level="Fácil">
+  <div class="q-head"><div class="q-num">Questão 7</div><div class="q-topic">Ângulos</div></div>
+  <span class="level easy">Fácil</span>
+  <p class="question">Duas retas se cruzam e um dos ângulos mede 50°. Quanto mede o ângulo oposto pelo vértice?</p>
+  <div class="options">
+    <div class="option"><input id="q7a" name="q7" value="A" type="radio"><label for="q7a">A) 40°</label></div>
+    <div class="option"><input id="q7b" name="q7" value="B" type="radio"><label for="q7b">B) 100°</label></div>
+    <div class="option"><input id="q7c" name="q7" value="C" type="radio"><label for="q7c">C) 50°</label></div>
+    <div class="option"><input id="q7d" name="q7" value="D" type="radio"><label for="q7d">D) 130°</label></div>
+  </div>
+  <div class="comment">Comentário: ângulos opostos pelo vértice são congruentes. Logo, 50°. Alternativa C.</div>
+</article>
+
+<article class="quiz-card" data-topic="Ângulos e retas" data-answer="D" data-level="Médio">
+  <div class="q-head"><div class="q-num">Questão 8</div><div class="q-topic">Ângulos</div></div>
+  <span class="level medium">Médio</span>
+  <p class="question">Dois ângulos adjacentes formam uma linha reta. Eles medem 3x + 20° e 2x + 10°. Determine x.</p>
+  <div class="options">
+    <div class="option"><input id="q8a" name="q8" value="A" type="radio"><label for="q8a">A) 20</label></div>
+    <div class="option"><input id="q8b" name="q8" value="B" type="radio"><label for="q8b">B) 25</label></div>
+    <div class="option"><input id="q8c" name="q8" value="C" type="radio"><label for="q8c">C) 28</label></div>
+    <div class="option"><input id="q8d" name="q8" value="D" type="radio"><label for="q8d">D) 30</label></div>
+  </div>
+  <div class="comment">Comentário: (3x + 20) + (2x + 10) = 180 → 5x + 30 = 180 → 5x = 150 → x = 30. Alternativa D.</div>
+</article>
+
+<article class="quiz-card" data-topic="Ângulos e retas" data-answer="A" data-level="Difícil">
+  <div class="q-head"><div class="q-num">Questão 9</div><div class="q-topic">Ângulos</div></div>
+  <span class="level hard">Difícil</span>
+  <p class="question">Dois ângulos adjacentes medem 3x + 15° e 5x + 5°. Qual é a medida do menor deles?</p>
+  <div class="options">
+    <div class="option"><input id="q9a" name="q9" value="A" type="radio"><label for="q9a">A) 75°</label></div>
+    <div class="option"><input id="q9b" name="q9" value="B" type="radio"><label for="q9b">B) 80°</label></div>
+    <div class="option"><input id="q9c" name="q9" value="C" type="radio"><label for="q9c">C) 85°</label></div>
+    <div class="option"><input id="q9d" name="q9" value="D" type="radio"><label for="q9d">D) 105°</label></div>
+  </div>
+  <div class="comment">Comentário: (3x + 15) + (5x + 5) = 180 → 8x + 20 = 180 → x = 20. Os ângulos são 75° e 105°. O menor é 75°. Alternativa A.</div>
+</article>
+
+<!-- 4 Complemento -->
+<article class="quiz-card" data-topic="Complemento e suplemento" data-answer="B" data-level="Fácil">
+  <div class="q-head"><div class="q-num">Questão 10</div><div class="q-topic">Complemento / suplemento</div></div>
+  <span class="level easy">Fácil</span>
+  <p class="question">Qual é o complemento de 25°?</p>
+  <div class="options">
+    <div class="option"><input id="q10a" name="q10" value="A" type="radio"><label for="q10a">A) 55°</label></div>
+    <div class="option"><input id="q10b" name="q10" value="B" type="radio"><label for="q10b">B) 65°</label></div>
+    <div class="option"><input id="q10c" name="q10" value="C" type="radio"><label for="q10c">C) 75°</label></div>
+    <div class="option"><input id="q10d" name="q10" value="D" type="radio"><label for="q10d">D) 155°</label></div>
+  </div>
+  <div class="comment">Comentário: complemento = 90° − 25° = 65°. Alternativa B.</div>
+</article>
+
+<article class="quiz-card" data-topic="Complemento e suplemento" data-answer="D" data-level="Médio">
+  <div class="q-head"><div class="q-num">Questão 11</div><div class="q-topic">Complemento / suplemento</div></div>
+  <span class="level medium">Médio</span>
+  <p class="question">Qual é o suplemento de 38°?</p>
+  <div class="options">
+    <div class="option"><input id="q11a" name="q11" value="A" type="radio"><label for="q11a">A) 52°</label></div>
+    <div class="option"><input id="q11b" name="q11" value="B" type="radio"><label for="q11b">B) 132°</label></div>
+    <div class="option"><input id="q11c" name="q11" value="C" type="radio"><label for="q11c">C) 138°</label></div>
+    <div class="option"><input id="q11d" name="q11" value="D" type="radio"><label for="q11d">D) 142°</label></div>
+  </div>
+  <div class="comment">Comentário: suplemento = 180° − 38° = 142°. Alternativa D.</div>
+</article>
+
+<article class="quiz-card" data-topic="Complemento e suplemento" data-answer="C" data-level="Difícil">
+  <div class="q-head"><div class="q-num">Questão 12</div><div class="q-topic">Complemento / suplemento</div></div>
+  <span class="level hard">Difícil</span>
+  <p class="question">Dois ângulos são complementares e medem x + 10° e x + 50°. Qual é o valor de x?</p>
+  <div class="options">
+    <div class="option"><input id="q12a" name="q12" value="A" type="radio"><label for="q12a">A) 10</label></div>
+    <div class="option"><input id="q12b" name="q12" value="B" type="radio"><label for="q12b">B) 10</label></div>
+    <div class="option"><input id="q12c" name="q12" value="C" type="radio"><label for="q12c">C) 15</label></div>
+    <div class="option"><input id="q12d" name="q12" value="D" type="radio"><label for="q12d">D) 20</label></div>
+  </div>
+  <div class="comment">Comentário: (x + 10) + (x + 50) = 90 → 2x + 60 = 90 → x = 15. Alternativa C.</div>
+</article>
+
+<!-- 5 Triangulos -->
+<article class="quiz-card" data-topic="Triângulos e quadriláteros" data-answer="A" data-level="Fácil">
+  <div class="q-head"><div class="q-num">Questão 13</div><div class="q-topic">Triângulos / quadriláteros</div></div>
+  <span class="level easy">Fácil</span>
+  <p class="question">Um triângulo possui ângulos de 50°, 60° e x. Qual é x?</p>
+  <div class="options">
+    <div class="option"><input id="q13a" name="q13" value="A" type="radio"><label for="q13a">A) 70°</label></div>
+    <div class="option"><input id="q13b" name="q13" value="B" type="radio"><label for="q13b">B) 80°</label></div>
+    <div class="option"><input id="q13c" name="q13" value="C" type="radio"><label for="q13c">C) 90°</label></div>
+    <div class="option"><input id="q13d" name="q13" value="D" type="radio"><label for="q13d">D) 100°</label></div>
+  </div>
+  <div class="comment">Comentário: 50° + 60° + x = 180° → x = 70°. Alternativa A.</div>
+</article>
+
+<article class="quiz-card" data-topic="Triângulos e quadriláteros" data-answer="B" data-level="Médio">
+  <div class="q-head"><div class="q-num">Questão 14</div><div class="q-topic">Triângulos / quadriláteros</div></div>
+  <span class="level medium">Médio</span>
+  <p class="question">Um quadrilátero possui ângulos internos de 90°, 90°, 110° e x. Qual é x?</p>
+  <div class="options">
+    <div class="option"><input id="q14a" name="q14" value="A" type="radio"><label for="q14a">A) 60°</label></div>
+    <div class="option"><input id="q14b" name="q14" value="B" type="radio"><label for="q14b">B) 70°</label></div>
+    <div class="option"><input id="q14c" name="q14" value="C" type="radio"><label for="q14c">C) 80°</label></div>
+    <div class="option"><input id="q14d" name="q14" value="D" type="radio"><label for="q14d">D) 90°</label></div>
+  </div>
+  <div class="comment">Comentário: 90 + 90 + 110 + x = 360 → x = 70°. Alternativa B.</div>
+</article>
+
+<article class="quiz-card" data-topic="Triângulos e quadriláteros" data-answer="D" data-level="Difícil">
+  <div class="q-head"><div class="q-num">Questão 15</div><div class="q-topic">Triângulos / quadriláteros</div></div>
+  <span class="level hard">Difícil</span>
+  <p class="question">Em um quadrilátero, os ângulos internos são x, x + 60°, 100° e 2x. Qual é o valor de x?</p>
+  <div class="options">
+    <div class="option"><input id="q15a" name="q15" value="A" type="radio"><label for="q15a">A) 40°</label></div>
+    <div class="option"><input id="q15b" name="q15" value="B" type="radio"><label for="q15b">B) 45°</label></div>
+    <div class="option"><input id="q15c" name="q15" value="C" type="radio"><label for="q15c">C) 48°</label></div>
+    <div class="option"><input id="q15d" name="q15" value="D" type="radio"><label for="q15d">D) 50°</label></div>
+  </div>
+  <div class="comment">Comentário: x + (x+60) + 100 + 2x = 360 → 4x + 160 = 360 → 4x = 200 → x = 50°. Alternativa D.</div>
+</article>
+
+<!-- 6 Paralelas -->
+<article class="quiz-card" data-topic="Retas paralelas e transversal" data-answer="B" data-level="Fácil">
+  <div class="q-head"><div class="q-num">Questão 16</div><div class="q-topic">Paralelas + transversal</div></div>
+  <span class="level easy">Fácil</span>
+  <p class="question">Duas retas paralelas são cortadas por uma transversal. Um ângulo correspondente mede 60°. Quanto mede o outro ângulo correspondente?</p>
+  <div class="options">
+    <div class="option"><input id="q16a" name="q16" value="A" type="radio"><label for="q16a">A) 30°</label></div>
+    <div class="option"><input id="q16b" name="q16" value="B" type="radio"><label for="q16b">B) 60°</label></div>
+    <div class="option"><input id="q16c" name="q16" value="C" type="radio"><label for="q16c">C) 120°</label></div>
+    <div class="option"><input id="q16d" name="q16" value="D" type="radio"><label for="q16d">D) 180°</label></div>
+  </div>
+  <div class="comment">Comentário: em duas paralelas cortadas por uma transversal, ângulos correspondentes têm a mesma medida. Portanto, 60°. Alternativa B.</div>
+</article>
+
+<article class="quiz-card" data-topic="Retas paralelas e transversal" data-answer="A" data-level="Médio">
+  <div class="q-head"><div class="q-num">Questão 17</div><div class="q-topic">Paralelas + transversal</div></div>
+  <span class="level medium">Médio</span>
+  <p class="question">Em duas paralelas cortadas por uma transversal, dois ângulos colaterais internos medem 3x + 20° e 5x. Qual é x?</p>
+  <div class="options">
+    <div class="option"><input id="q17a" name="q17" value="A" type="radio"><label for="q17a">A) 20</label></div>
+    <div class="option"><input id="q17b" name="q17" value="B" type="radio"><label for="q17b">B) 22</label></div>
+    <div class="option"><input id="q17c" name="q17" value="C" type="radio"><label for="q17c">C) 25</label></div>
+    <div class="option"><input id="q17d" name="q17" value="D" type="radio"><label for="q17d">D) 30</label></div>
+  </div>
+  <div class="comment">Comentário: colaterais internos são suplementares: 3x + 20 + 5x = 180 → 8x = 160 → x = 20. Alternativa A.</div>
+</article>
+
+<article class="quiz-card" data-topic="Retas paralelas e transversal" data-answer="C" data-level="Difícil">
+  <div class="q-head"><div class="q-num">Questão 18</div><div class="q-topic">Paralelas + transversal</div></div>
+  <span class="level hard">Difícil</span>
+  <p class="question">Em duas retas paralelas, um par de ângulos correspondentes mede 5x + 10° e 2x + 70°. Qual é a medida desse ângulo?</p>
+  <div class="options">
+    <div class="option"><input id="q18a" name="q18" value="A" type="radio"><label for="q18a">A) 90°</label></div>
+    <div class="option"><input id="q18b" name="q18" value="B" type="radio"><label for="q18b">B) 100°</label></div>
+    <div class="option"><input id="q18c" name="q18" value="C" type="radio"><label for="q18c">C) 110°</label></div>
+    <div class="option"><input id="q18d" name="q18" value="D" type="radio"><label for="q18d">D) 120°</label></div>
+  </div>
+  <div class="comment">Comentário: correspondentes são iguais: 5x + 10 = 2x + 70 → 3x = 60 → x = 20. O ângulo é 5·20 + 10 = 110°. Alternativa C.</div>
+</article>
+
+<!-- 7 Poligonos -->
+<article class="quiz-card" data-topic="Polígonos" data-answer="D" data-level="Fácil">
+  <div class="q-head"><div class="q-num">Questão 19</div><div class="q-topic">Polígonos</div></div>
+  <span class="level easy">Fácil</span>
+  <p class="question">Qual é a soma dos ângulos internos de um pentágono?</p>
+  <div class="options">
+    <div class="option"><input id="q19a" name="q19" value="A" type="radio"><label for="q19a">A) 360°</label></div>
+    <div class="option"><input id="q19b" name="q19" value="B" type="radio"><label for="q19b">B) 450°</label></div>
+    <div class="option"><input id="q19c" name="q19" value="C" type="radio"><label for="q19c">C) 500°</label></div>
+    <div class="option"><input id="q19d" name="q19" value="D" type="radio"><label for="q19d">D) 540°</label></div>
+  </div>
+  <div class="comment">Comentário: S = (5 − 2)·180° = 3·180° = 540°. Alternativa D.</div>
+</article>
+
+<article class="quiz-card" data-topic="Polígonos" data-answer="A" data-level="Médio">
+  <div class="q-head"><div class="q-num">Questão 20</div><div class="q-topic">Polígonos</div></div>
+  <span class="level medium">Médio</span>
+  <p class="question">Qual é a medida de cada ângulo interno de um hexágono regular?</p>
+  <div class="options">
+    <div class="option"><input id="q20a" name="q20" value="A" type="radio"><label for="q20a">A) 120°</label></div>
+    <div class="option"><input id="q20b" name="q20" value="B" type="radio"><label for="q20b">B) 100°</label></div>
+    <div class="option"><input id="q20c" name="q20" value="C" type="radio"><label for="q20c">C) 90°</label></div>
+    <div class="option"><input id="q20d" name="q20" value="D" type="radio"><label for="q20d">D) 60°</label></div>
+  </div>
+  <div class="comment">Comentário: soma = (6−2)·180° = 720°. Como é regular, 720°/6 = 120°. Alternativa A.</div>
+</article>
+
+<article class="quiz-card" data-topic="Polígonos" data-answer="C" data-level="Difícil">
+  <div class="q-head"><div class="q-num">Questão 21</div><div class="q-topic">Polígonos</div></div>
+  <span class="level hard">Difícil</span>
+  <p class="question">Em um decágono regular, qual é a medida de cada ângulo externo?</p>
+  <div class="options">
+    <div class="option"><input id="q21a" name="q21" value="A" type="radio"><label for="q21a">A) 30°</label></div>
+    <div class="option"><input id="q21b" name="q21" value="B" type="radio"><label for="q21b">B) 35°</label></div>
+    <div class="option"><input id="q21c" name="q21" value="C" type="radio"><label for="q21c">C) 36°</label></div>
+    <div class="option"><input id="q21d" name="q21" value="D" type="radio"><label for="q21d">D) 40°</label></div>
+  </div>
+  <div class="comment">Comentário: em um polígono regular, cada externo = 360°/n. Logo, 360°/10 = 36°. Alternativa C.</div>
+</article>
+
+<!-- 8 Razoes -->
+<article class="quiz-card" data-topic="Razões" data-answer="D" data-level="Fácil">
+  <div class="q-head"><div class="q-num">Questão 22</div><div class="q-topic">Razões</div></div>
+  <span class="level easy">Fácil</span>
+  <p class="question">Em uma turma, a razão entre meninos e meninas é 3:2. Se há 21 meninos, quantos estudantes há ao todo?</p>
+  <div class="options">
+    <div class="option"><input id="q22a" name="q22" value="A" type="radio"><label for="q22a">A) 28</label></div>
+    <div class="option"><input id="q22b" name="q22" value="B" type="radio"><label for="q22b">B) 30</label></div>
+    <div class="option"><input id="q22c" name="q22" value="C" type="radio"><label for="q22c">C) 32</label></div>
+    <div class="option"><input id="q22d" name="q22" value="D" type="radio"><label for="q22d">D) 35</label></div>
+  </div>
+  <div class="comment">Comentário: 21 corresponde a 3 partes, então cada parte vale 7. Meninas = 2·7 = 14. Total = 21 + 14 = 35. Alternativa D.</div>
+</article>
+
+<article class="quiz-card" data-topic="Razões" data-answer="B" data-level="Médio">
+  <div class="q-head"><div class="q-num">Questão 23</div><div class="q-topic">Razões</div></div>
+  <span class="level medium">Médio</span>
+  <p class="question">A razão entre caminhões vermelhos e azuis em uma loja é 3:5. Se há 18 caminhões vermelhos, quantos são azuis?</p>
+  <div class="options">
+    <div class="option"><input id="q23a" name="q23" value="A" type="radio"><label for="q23a">A) 24</label></div>
+    <div class="option"><input id="q23b" name="q23" value="B" type="radio"><label for="q23b">B) 30</label></div>
+    <div class="option"><input id="q23c" name="q23" value="C" type="radio"><label for="q23c">C) 36</label></div>
+    <div class="option"><input id="q23d" name="q23" value="D" type="radio"><label for="q23d">D) 45</label></div>
+  </div>
+  <div class="comment">Comentário: 18/3 = 6. Portanto, os azuis são 5·6 = 30. Alternativa B.</div>
+</article>
+
+<article class="quiz-card" data-topic="Razões" data-answer="A" data-level="Difícil">
+  <div class="q-head"><div class="q-num">Questão 24</div><div class="q-topic">Razões</div></div>
+  <span class="level hard">Difícil</span>
+  <p class="question">Em um abrigo, a quantidade de cachorros é o dobro da quantidade de gatos. Ao todo há 21 animais. Quantos são gatos?</p>
+  <div class="options">
+    <div class="option"><input id="q24a" name="q24" value="A" type="radio"><label for="q24a">A) 7</label></div>
+    <div class="option"><input id="q24b" name="q24" value="B" type="radio"><label for="q24b">B) 8</label></div>
+    <div class="option"><input id="q24c" name="q24" value="C" type="radio"><label for="q24c">C) 9</label></div>
+    <div class="option"><input id="q24d" name="q24" value="D" type="radio"><label for="q24d">D) 14</label></div>
+  </div>
+  <div class="comment">Comentário: gatos = g e cachorros = 2g. Então g + 2g = 21 → 3g = 21 → g = 7. Alternativa A.</div>
+</article>
+
+<!-- 9 Proporcoes -->
+<article class="quiz-card" data-topic="Proporções" data-answer="C" data-level="Fácil">
+  <div class="q-head"><div class="q-num">Questão 25</div><div class="q-topic">Proporções</div></div>
+  <span class="level easy">Fácil</span>
+  <p class="question">Na proporção 8/2 = x/6, qual é o valor de x?</p>
+  <div class="options">
+    <div class="option"><input id="q25a" name="q25" value="A" type="radio"><label for="q25a">A) 12</label></div>
+    <div class="option"><input id="q25b" name="q25" value="B" type="radio"><label for="q25b">B) 18</label></div>
+    <div class="option"><input id="q25c" name="q25" value="C" type="radio"><label for="q25c">C) 24</label></div>
+    <div class="option"><input id="q25d" name="q25" value="D" type="radio"><label for="q25d">D) 30</label></div>
+  </div>
+  <div class="comment">Comentário: 8/2 = x/6 → 8·6 = 2x → 48 = 2x → x = 24. Alternativa C.</div>
+</article>
+
+<article class="quiz-card" data-topic="Proporções" data-answer="B" data-level="Médio">
+  <div class="q-head"><div class="q-num">Questão 26</div><div class="q-topic">Proporções</div></div>
+  <span class="level medium">Médio</span>
+  <p class="question">Na proporção 3/5 = x/20, qual é x?</p>
+  <div class="options">
+    <div class="option"><input id="q26a" name="q26" value="A" type="radio"><label for="q26a">A) 10</label></div>
+    <div class="option"><input id="q26b" name="q26" value="B" type="radio"><label for="q26b">B) 12</label></div>
+    <div class="option"><input id="q26c" name="q26" value="C" type="radio"><label for="q26c">C) 15</label></div>
+    <div class="option"><input id="q26d" name="q26" value="D" type="radio"><label for="q26d">D) 18</label></div>
+  </div>
+  <div class="comment">Comentário: 3/5 = x/20 → 5x = 60 → x = 12. Alternativa B.</div>
+</article>
+
+<article class="quiz-card" data-topic="Proporções" data-answer="A" data-level="Difícil">
+  <div class="q-head"><div class="q-num">Questão 27</div><div class="q-topic">Proporções</div></div>
+  <span class="level hard">Difícil</span>
+  <p class="question">Qual valor de x faz 8, 2x, 12 e x + 4 formarem, nessa ordem, uma proporção?</p>
+  <div class="options">
+    <div class="option"><input id="q27a" name="q27" value="A" type="radio"><label for="q27a">A) 2</label></div>
+    <div class="option"><input id="q27b" name="q27" value="B" type="radio"><label for="q27b">B) 3</label></div>
+    <div class="option"><input id="q27c" name="q27" value="C" type="radio"><label for="q27c">C) 4</label></div>
+    <div class="option"><input id="q27d" name="q27" value="D" type="radio"><label for="q27d">D) 6</label></div>
+  </div>
+  <div class="comment">Comentário: 8/(2x) = 12/(x+4). Fazendo o produto cruzado: 8(x+4) = 24x → 8x + 32 = 24x → 32 = 16x → x = 2. Alternativa A.</div>
+</article>
+
+<div class="buttons">
+  <button class="btn btn-main" type="button" id="gradeBtn">✓ Corrigir questionário</button>
+  <button class="btn btn-reset" type="button" id="resetBtn">↺ Limpar respostas</button>
+  <button class="btn btn-reset" type="button" onclick="window.print()">🖨 Imprimir / salvar em PDF</button>
+</div>
+</form>
+</section>
+
+<section class="section results" id="resultados">
+  <div class="section-head">
+    <div><span class="section-num">Parte 3</span><h2>Seu desempenho</h2></div>
+    <p>Os dados são calculados automaticamente a partir das alternativas marcadas.</p>
+  </div>
+  <div class="results-grid">
+    <article class="panel">
+      <h3 style="font-family:Georgia,serif;margin-top:0">Percentual geral</h3>
+      <div class="donut-wrap">
+        <div class="donut" id="donut"><div class="donut-center"><strong id="scorePct">0%</strong><span>acertos</span></div></div>
+      </div>
+      <div class="legend"><span><span class="dot dot1"></span>Acertos</span><span><span class="dot dot2"></span>Erros</span></div>
+      <p id="scoreText" style="font-weight:900;text-align:center;margin-bottom:0">0 de 27</p>
+    </article>
+    <article class="panel">
+      <h3 style="font-family:Georgia,serif;margin-top:0">Desempenho por conteúdo</h3>
+      <div id="bars"></div>
+    </article>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+    <article class="panel">
+      <h3 style="font-family:Georgia,serif;margin-top:0">Maior facilidade</h3>
+      <div id="easyBox" class="insight easy">—</div>
+      <h3 style="font-family:Georgia,serif;margin:20px 0 0">Maior dificuldade</h3>
+      <div id="hardBox" class="insight hard">—</div>
+    </article>
+    <article class="panel">
+      <h3 style="font-family:Georgia,serif;margin-top:0">Estudo orientado</h3>
+      <p style="color:var(--muted)">O plano abaixo é gerado de acordo com os menores percentuais de acerto.</p>
+      <div id="studyList" class="study-list"></div>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div><span class="section-num">Parte 4</span><h2>Gabarito comentado</h2></div>
+    <p>Ao corrigir, cada questão recebe a indicação de certa/errada e o comentário correspondente.</p>
+  </div>
+  <article class="topic">
+    <h3>Como usar os comentários</h3>
+    <p>Para cada erro, retorne primeiro à revisão do mesmo eixo. Em seguida, refaça a questão sem consultar a resposta. A meta é conseguir explicar o procedimento, e não apenas memorizar a letra correta.</p>
+    <table>
+      <tr><th>Eixo</th><th>O que você deve saber fazer</th></tr>
+      <tr><td>Equações</td><td>Isolar a incógnita e conferir por substituição.</td></tr>
+      <tr><td>Sistemas</td><td>Eliminar uma incógnita e encontrar o par solução.</td></tr>
+      <tr><td>Ângulos</td><td>Reconhecer igualdade entre opostos e soma de 180° em uma reta.</td></tr>
+      <tr><td>Complemento / suplemento</td><td>Distinguir 90° de 180°.</td></tr>
+      <tr><td>Triângulos / quadriláteros</td><td>Aplicar 180° e 360° às somas dos ângulos internos.</td></tr>
+      <tr><td>Paralelas</td><td>Identificar relações entre correspondentes, alternos e colaterais.</td></tr>
+      <tr><td>Polígonos</td><td>Usar S=(n−2)·180° e 360°/n em regulares.</td></tr>
+      <tr><td>Razões</td><td>Interpretar comparação e manter a mesma razão ao ampliar/reduzir.</td></tr>
+      <tr><td>Proporções</td><td>Montar corretamente a igualdade de razões e usar produto cruzado.</td></tr>
+    </table>
+  </article>
+</section>
+
+<section class="section">
+  <article class="writing">
+    <span class="tag">📌 Revisão estratégica</span>
+    <h3>Roteiro de estudo após o diagnóstico</h3>
+    <p>1. Retome o conteúdo com menor percentual de acerto. 2. Refça as questões erradas sem olhar o comentário. 3. Resolva mais dois exercícios do mesmo tipo. 4. Só depois avance para o próximo conteúdo.</p>
+    <div class="checklist">
+      <div class="check">Explique a regra em voz alta.</div>
+      <div class="check">Escreva a fórmula antes da conta.</div>
+      <div class="check">Confira se a resposta faz sentido.</div>
+      <div class="check">Refaça os erros após 24 horas.</div>
+    </div>
+  </article>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div><span class="section-num">Referência</span><h2>Material da aula anterior</h2></div>
+    <p>O botão abaixo preserva a ligação com a revisão anterior de Língua Portuguesa indicada no pedido.</p>
+  </div>
+  <article class="topic">
+    <h3>Revisão de Português</h3>
+    <p>Use como material complementar a aula anterior do Curso Preparatório Professora Samanta.</p>
+    <a class="btn btn-main" style="display:inline-block;text-decoration:none" href="https://samanta-preparatorios.github.io/Revisao-de-Portugues/" target="_blank" rel="noopener">Abrir material anterior ↗</a>
+  </article>
+</section>
+
+<section class="contact">
+  <div class="contact-content">
+    <div>
+      <small>Fale com o professor</small>
+      <h3>Curso Preparatório Professora Samanta</h3>
+      <p>Professor responsável: <strong>Edvan Souza</strong>. Para dúvidas sobre conteúdos, exercícios e preparação, utilize o contato pelo WhatsApp.</p>
+    </div>
+    <a class="contact-btn" href="https://wa.me/5581987461998" target="_blank" rel="noopener">💬 Entrar em contato via WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <strong>Curso Preparatório Professora Samanta</strong><br>
+  Material interativo de revisão · Matemática · 7º ano
+</footer>
+</main>
+
+<script>
+(function(){
+  const cards=[...document.querySelectorAll('.quiz-card')];
+  const total=cards.length;
+  const topics=[...new Set(cards.map(c=>c.dataset.topic))];
+  const answeredLabel=document.getElementById('answeredLabel');
+  const progressBar=document.getElementById('progressBar');
+  const results=document.getElementById('resultados');
+
+  function progress(){
+    const n=cards.filter(c=>c.querySelector('input:checked')).length;
+    answeredLabel.textContent=`${n} de ${total} questões respondidas`;
+    progressBar.style.width=(n/total*100)+'%';
+  }
+  cards.forEach(c=>{
+    c.addEventListener('change',progress);
+  });
+
+  function names(arr){
+    if(!arr.length) return '—';
+    if(arr.length===1) return arr[0];
+    if(arr.length===2) return arr.join(' e ');
+    return arr.slice(0,-1).join(', ')+' e '+arr[arr.length-1];
+  }
+
+  document.getElementById('gradeBtn').addEventListener('click',()=>{
+    let score=0;
+    const stats={};
+    topics.forEach(t=>stats[t]={correct:0,total:0});
+    cards.forEach((card,i)=>{
+      const chosen=card.querySelector('input:checked');
+      const answer=card.dataset.answer;
+      const old=card.querySelector('.result-line');
+      if(old) old.remove();
+      const line=document.createElement('div');
+      line.className='result-line';
+      stats[card.dataset.topic].total++;
+      if(chosen){
+        card.classList.add('answered');
+        if(chosen.value===answer){
+          score++; stats[card.dataset.topic].correct++;
+          line.classList.add('correct');
+          line.textContent='✓ Resposta correta';
+        }else{
+          line.classList.add('wrong');
+          line.textContent=`✗ Resposta incorreta. Gabarito: ${answer}`;
+        }
+      }else{
+        card.classList.add('answered');
+        line.classList.add('wrong');
+        line.textContent=`• Sem resposta. Gabarito: ${answer}`;
+      }
+      card.appendChild(line);
+    });
+
+    const pct=Math.round(score/total*100);
+    document.getElementById('scorePct').textContent=pct+'%';
+    document.getElementById('scoreText').textContent=`${score} de ${total} questões corretas`;
+    document.getElementById('donut').style.background=`conic-gradient(var(--blue) 0 ${pct}%, #dfe5e8 ${pct}% 100%)`;
+
+    const sorted=Object.entries(stats).map(([t,s])=>({t,p:s.correct/s.total*100,c:s.correct,t2:s.total})).sort((a,b)=>b.p-a.p);
+    const bars=document.getElementById('bars');
+    bars.innerHTML=sorted.map(x=>`
+      <div class="bar-row">
+        <div class="bar-label">${x.t}</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${x.p}%"></div></div>
+        <div class="bar-pct">${Math.round(x.p)}%</div>
+      </div>`).join('');
+
+    const best=sorted[0].p, worst=sorted[sorted.length-1].p;
+    document.getElementById('easyBox').innerHTML=`${names(sorted.filter(x=>x.p===best).map(x=>x.t))} — ${Math.round(best)}% de acertos.`;
+    document.getElementById('hardBox').innerHTML=`${names(sorted.filter(x=>x.p===worst).map(x=>x.t))} — ${Math.round(worst)}% de acertos.`;
+
+    const study=sorted.slice(-3);
+    const studyList=document.getElementById('studyList');
+    studyList.innerHTML=study.map(x=>`
+      <div class="study-item"><strong>${x.t}</strong><br>
+      Retome a regra principal, refaça as três questões deste eixo e resolva mais dois exercícios semelhantes. Resultado atual: <strong>${Math.round(x.p)}%</strong>.</div>`).join('');
+
+    results.classList.add('show');
+    results.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+
+  document.getElementById('resetBtn').addEventListener('click',()=>{
+    document.getElementById('quizForm').reset();
+    cards.forEach(c=>{
+      c.classList.remove('answered');
+      const line=c.querySelector('.result-line'); if(line) line.remove();
+    });
+    progress();
+    results.classList.remove('show');
+    document.getElementById('bars').innerHTML='';
+    document.getElementById('studyList').innerHTML='';
+  });
+})();
+</script>
+</body>
+</html>
